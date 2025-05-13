@@ -1,13 +1,13 @@
-M = {}
+local M = {}
 
-M.path = "./food_logs.csv"
+M.path = "../db/food_logs.csv"
 
 local path = M.path
 
-local db = require("db")
+local db = require("src.db")
 
 function M.get(search_term)
-	return db.get_from_db(M.path, search_term)
+	return db.get_from_db(path, search_term)
 end
 
 function M.add(text)
